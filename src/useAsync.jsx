@@ -18,12 +18,12 @@ function asyncReducer(state, action) {
   }
 }
 
-export const useAsync = (intialState) => {
+export const useAsync = (initialState) => {
   const [state, unsafeDispatch] = React.useReducer(asyncReducer, {
     status: "IDLE",
     data: null,
     error: null,
-    ...intialState,
+    ...initialState,
   });
 
   const dispatch = useSafeDispatch(unsafeDispatch);
